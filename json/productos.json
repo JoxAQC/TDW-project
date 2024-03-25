@@ -1,0 +1,42 @@
+{"productos": [
+    {
+      "nombre": "Producto A",
+      "fecha_nacimiento": "2023-01-01",
+      "fecha_defuncion": null,
+      "imagen": "https://ejemplo.com/imagen_producto_a.jpg",
+      "wiki": "https://en.wikipedia.org/wiki/Producto_A",
+      "personas_participantes": [
+        {
+          "nombre": "Juan Pérez",
+          "fecha_nacimiento": "1990-05-15",
+          "fecha_defuncion": null,
+          "imagen": "https://ejemplo.com/imagen_juan_perez.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Juan_Pérez"
+        },
+        {
+          "nombre": "María Gómez",
+          "fecha_nacimiento": "1985-09-20",
+          "fecha_defuncion": null,
+          "imagen": "https://ejemplo.com/imagen_maria_gomez.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/María_Gómez"
+        }
+      ],
+      "entidades_participantes": [
+        {
+          "nombre": "Entidad X",
+          "fecha_nacimiento": "2000-03-10",
+          "fecha_defuncion": null,
+          "imagen": "https://ejemplo.com/imagen_entidad_x.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Entidad_X"
+        },
+        {
+          "nombre": "Entidad Y",
+          "fecha_nacimiento": "1995-07-25",
+          "fecha_defuncion": null,
+          "imagen": "https://ejemplo.com/imagen_entidad_y.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Entidad_Y"
+        }
+      ]
+    }
+]
+}

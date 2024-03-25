@@ -1,0 +1,31 @@
+{"personas": [
+  {
+    "nombre": "Juan Pérez",
+    "fecha_nacimiento": "1990-05-15",
+    "fecha_defuncion": null,
+    "imagen": "https://ejemplo.com/imagen_juan_perez.jpg",
+    "wiki": "https://en.wikipedia.org/wiki/Juan_Pérez"
+  },
+  {
+    "nombre": "María Gómez",
+    "fecha_nacimiento": "1985-09-20",
+    "fecha_defuncion": null,
+    "imagen": "https://ejemplo.com/imagen_maria_gomez.jpg",
+    "wiki": "https://en.wikipedia.org/wiki/María_Gómez"
+  },
+  {
+    "nombre": "Pedro García",
+    "fecha_nacimiento": "1980-12-05",
+    "fecha_defuncion": null,
+    "imagen": "https://ejemplo.com/imagen_pedro_garcia.jpg",
+    "wiki": "https://en.wikipedia.org/wiki/Pedro_García"
+  },
+  {
+    "nombre": "Ana Martínez",
+    "fecha_nacimiento": "1975-06-18",
+    "fecha_defuncion": null,
+    "imagen": "https://ejemplo.com/imagen_ana_martinez.jpg",
+    "wiki": "https://en.wikipedia.org/wiki/Ana_Martínez"
+  }
+]
+}

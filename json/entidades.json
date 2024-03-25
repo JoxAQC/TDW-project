@@ -1,0 +1,26 @@
+{ "entidades": [
+  {
+    "nombre": "Entidad X",
+    "fecha_nacimiento": "2000-03-10",
+    "fecha_defuncion": null,
+    "imagen": "https://ejemplo.com/imagen_entidad_x.jpg",
+    "wiki": "https://en.wikipedia.org/wiki/Entidad_X",
+    "personas_participantes": [
+      {
+        "nombre": "Pedro García",
+        "fecha_nacimiento": "1980-12-05",
+        "fecha_defuncion": null,
+        "imagen": "https://ejemplo.com/imagen_pedro_garcia.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Pedro_García"
+      },
+      {
+        "nombre": "Ana Martínez",
+        "fecha_nacimiento": "1975-06-18",
+        "fecha_defuncion": null,
+        "imagen": "https://ejemplo.com/imagen_ana_martinez.jpg",
+        "wiki": "https://en.wikipedia.org/wiki/Ana_Martínez"
+      }
+    ]
+  }
+]
+}

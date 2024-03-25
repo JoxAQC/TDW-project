@@ -1,0 +1,175 @@
+:root {
+
+	/**
+	 * colors
+	 */
+  
+	--black: #140f07;
+	--darkblue: #11264c;
+	--blue: #3b5db4;
+	--lightblue: #76a1fe;
+	--skyblue: #c2eff9;
+	--white: #efeff5;
+  }
+
+body {
+	
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	color: var(--black);
+	margin: 0;
+}
+
+/*Header*/
+
+.logos{
+	height: 100px; 
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.logos > .cont {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 1000px;
+	justify-content: space-between;
+}
+
+nav{
+	height: 50px; 
+	background-color: var(--darkblue);
+	position: sticky;
+}
+
+.navbar{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 7.8rem;
+	padding: 20px;
+	list-style-type: none;
+	margin: 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 16px;
+	
+}
+
+.nav-toggle-btn { display: none; }
+
+
+.dropdown{
+	display: none;
+}
+
+
+/* Content */
+#personas, #productos, #entidades {
+	padding: 40px;
+}
+
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; /* Permite que los elementos se autoajusten */
+	gap: 20px;
+	justify-content: center;
+	padding: 20px;
+}
+
+h3 {
+	font-size: 1.5em;
+	text-align: center;
+	color: var(--darkblue);
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+h4 {
+	font-size: 1em;
+	text-align: center;
+	color: var(--blue);
+	text-transform: uppercase;
+}
+
+.person {
+	display: inline-flex;
+	align-items: center;
+	margin: 20px 0;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.person img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid var(--darkblue);
+}
+
+
+
+.block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 20px 20px;
+	width: 180px;
+	text-align: center;
+	border: solid 0.5px #888888;
+	border-radius: 20px;
+	box-shadow: 0px 0px 8px 4px #e4e4e4;
+}
+
+.block2{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 20px 20px;
+	width: 180px;
+	text-align: center;
+	box-shadow: 0px 0px 8px 4px #e4e4e4;
+}
+
+.bimg  img{
+	width: 100%;
+}
+
+
+
+/* Footer */
+footer {
+	margin-top: 50px;
+	background-color: var(--blue);
+	text-align: left;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 2.5rem;
+	gap: 6rem;
+}
+
+footer ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+
+h5 {
+	font-size: 1em;
+}
+
