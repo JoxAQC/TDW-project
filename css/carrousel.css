@@ -4,7 +4,7 @@
 /*slider*/
 #carouselExampleIndicators{
 	position: relative;
-	height: 100vh;
+	height: 85vh;
 	width: 100%;
 }
 #carouselExampleIndicators .carousel-inner{
@@ -27,19 +27,19 @@
 	position: relative;
 	height: 100%;
 	width:100%;
-	background: url("../images/1.png");
+	background: url("https://www.uab.cat/Imatge/878/888/HistoriaCienciaG,0.gif");
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
-	background: url('../images/2.png');
+	background: url('https://caixaforum.org/documents/311930/165459227/palabras+de+ciencia_1686121534619+spa2.jpg/0c0e0a1f-74d4-97bd-2b10-a4b4419d3bbc?version=1.0&t=1707131521854');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
-	background: url('../images/3.png');
+	background: url('https://files.pucp.education/puntoedu/wp-content/uploads/2022/05/13114548/06-pucp-abre-ministerio-de-ciencia_mesa-de-trabajo-1.png');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;

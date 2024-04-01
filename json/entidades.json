@@ -1,26 +1,68 @@
-{ "entidades": [
-  {
-    "nombre": "Entidad X",
-    "fecha_nacimiento": "2000-03-10",
-    "fecha_defuncion": null,
-    "imagen": "https://ejemplo.com/imagen_entidad_x.jpg",
-    "wiki": "https://en.wikipedia.org/wiki/Entidad_X",
-    "personas_participantes": [
-      {
-        "nombre": "Pedro García",
-        "fecha_nacimiento": "1980-12-05",
-        "fecha_defuncion": null,
-        "imagen": "https://ejemplo.com/imagen_pedro_garcia.jpg",
-        "wiki": "https://en.wikipedia.org/wiki/Pedro_García"
-      },
-      {
-        "nombre": "Ana Martínez",
-        "fecha_nacimiento": "1975-06-18",
-        "fecha_defuncion": null,
-        "imagen": "https://ejemplo.com/imagen_ana_martinez.jpg",
-        "wiki": "https://en.wikipedia.org/wiki/Ana_Martínez"
-      }
-    ]
-  }
-]
+{
+  "entidades": [
+    {
+      "nombre": "IBM",
+      "fecha_nacimiento": "16 de junio de 1911",
+      "utilidad": "Empresa multinacional de tecnología y consultoría",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png",
+      "wiki": "https://en.wikipedia.org/wiki/IBM",
+      "personas_participantes": [
+        {
+          "nombre": "Charles F. Goldfarb",
+          "fecha_nacimiento": "2 de julio de 1947",
+          "fecha_defuncion": null,
+          "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Charles_F_Goldfarb_2006.jpg/220px-Charles_F_Goldfarb_2006.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Charles_F._Goldfarb"
+        }
+      ]
+    },
+    {
+      "nombre": "CERN",
+      "fecha_nacimiento": "29 de septiembre de 1954",
+      "utilidad": "Organización europea para la investigación nuclear",
+      "imagen": "https://cs3mesh4eosc.eu/sites/default/files/2021-06/CERN-Logo.png",
+      "wiki": "https://en.wikipedia.org/wiki/CERN",
+      "personas_participantes": [
+        {
+          "nombre": "Tim Berners-Lee",
+          "fecha_nacimiento": "8 de junio de 1955",
+          "fecha_defuncion": null,
+          "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Berners-Lee_KN-2008.jpg/220px-Tim_Berners-Lee_KN-2008.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+        }
+      ]
+    },
+    {
+      "nombre": "W3C",
+      "fecha_nacimiento": "1 de octubre de 1994",
+      "utilidad": "Consorcio para la creación de estándares web",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/W3C%C2%AE_Icon.svg/1200px-W3C%C2%AE_Icon.svg.png",
+      "wiki": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+      "personas_participantes": [
+        {
+          "nombre": "Tim Berners-Lee",
+          "fecha_nacimiento": "8 de junio de 1955",
+          "fecha_defuncion": null,
+          "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Berners-Lee_KN-2008.jpg/220px-Tim_Berners-Lee_KN-2008.jpg",
+          "wiki": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+        }
+      ]
+    }
+  ],
+  "personas": [
+    {
+      "nombre": "Charles F. Goldfarb",
+      "fecha_nacimiento": "2 de julio de 1947",
+      "fecha_defuncion": null,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Charles_F_Goldfarb_2006.jpg/220px-Charles_F_Goldfarb_2006.jpg",
+      "wiki": "https://en.wikipedia.org/wiki/Charles_F._Goldfarb"
+    },
+    {
+      "nombre": "Tim Berners-Lee",
+      "fecha_nacimiento": "8 de junio de 1955",
+      "fecha_defuncion": null,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Berners-Lee_KN-2008.jpg/220px-Tim_Berners-Lee_KN-2008.jpg",
+      "wiki": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+    }
+  ]
 }

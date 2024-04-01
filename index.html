@@ -25,10 +25,10 @@
                       <span class="line bottom"></span>
                   </button>
                   <div class="sidebar" id="sidebar">
-                      <a href="index.html" data-nav-link>Inicio</a>
-                      <a href="people.html" data-nav-link>Personas</a>
-                      <a href="news.html" data-nav-link>Recursos</a>
-                      <a href="products.html" data-nav-link>Productos</a>
+                      <a href="#home" data-nav-link>Inicio</a>
+                      <a href="#personas" data-nav-link>Personas</a>
+                      <a href="#entidades" data-nav-link>Entidades</a>
+                      <a href="#productos" data-nav-link>Productos</a>
                   </div>
               </div>
             </div>
@@ -37,10 +37,10 @@
 
          <nav>
             <ul class="navbar">
-               <li class="active"><a href="index.html" data-nav-link>Inicio</a></li>
-               <li><a href="people.html" data-nav-link>Nosotros</a></li>
-               <li><a href="news.html" data-nav-link>Recursos</a></li>
-               <li><a href="products.html" data-nav-link>Eventos</a></li>
+               <li class="active"><a href="#home" data-nav-link>Inicio</a></li>
+               <li><a href="#personas" data-nav-link>Personas</a></li>
+               <li><a href="#entidades" data-nav-link>Entidades</a></li>
+               <li><a href="#productos" data-nav-link>Productos</a></li>
             </ul>
          </nav>
                
@@ -77,63 +77,29 @@
 
     <section id="personas">
       <h3>Personas</h3>
-      <div class="container">
-         <div class="person">
-            <img src="https://ctivitae.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=63316&ruta=/documents/docInvestigadores/63316/imagenes/FOTOGRAFIA%20(3).jpg&content_type=image/jpeg" alt="Hall Stevenson"/>
-            <div class="span9">
-                <h4>Néstor Alvarado</h4>
-                <p>Resumen</p>
-            </div>
-            <button>Editar</button>
-        </div>
+      <div id="contenedorPersonas" class="container">
 
-        <div class="person">
-         <img src="https://ctivitae.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=63316&ruta=/documents/docInvestigadores/63316/imagenes/FOTOGRAFIA%20(3).jpg&content_type=image/jpeg" alt="Hall Stevenson"/>
-         <div class="span9">
-             <h4>Néstor Alvarado</h4>
-             <p>Resumen</p>
-         </div>
-         <button>Editar</button>
-     </div>
-
-     <div class="person">
-      <img src="https://ctivitae.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=63316&ruta=/documents/docInvestigadores/63316/imagenes/FOTOGRAFIA%20(3).jpg&content_type=image/jpeg" alt="Hall Stevenson"/>
-      <div class="span9">
-          <h4>Néstor Alvarado</h4>
-          <p>Resumen</p>
       </div>
-      <button>Editar</button>
-  </div>
-
-  
-
-      
-      </div>
+      <button>Create</button>
     </section>
 
     <section id="entidades">
       <h3>Entidades</h3>
-      <div class="container">
-         <div class="block">
-            <div class="bimg">
-               <a href="https://eric.ed.gov/"> <img src="https://www.asociacionapige.com/wp-content/uploads/2023/05/ERIC.jpg" alt=""></a>   
-            </div>
+      <div id="contenedorEntidad" class="container">
+         <div class="entidad">
+            <a href="https://eric.ed.gov/"> <img src="https://www.asociacionapige.com/wp-content/uploads/2023/05/ERIC.jpg" alt=""></a>   
             <p>Es una base de datos patrocinada por el Instituto de Educación de los Estados Unidos. Proporciona acceso a una amplia gama de literatura educativa, incluyendo investigaciones, informes, libros, revistas y otros recursos relacionados.</p>
          </div>
-
-      
       </div>
+      <button>Create</button>
     </section>
       
      <section id="productos">
          <h3>Productos</h3>
-         <div class="container">
-               <div class="block2">
-                  <div class="bimg">
-                     <a href="https://enlinea.sunedu.gob.pe/"><img src="https://www.asociacionapige.com/wp-content/uploads/2023/05/Sunedu.jpg" alt=""></a>
-                  </div>
-               </div>
+         <div id="contenedorProductos" class="container">
+
          </div>
+         <button>Create</button>
      </section>
 
 
@@ -162,5 +128,11 @@
 
 
       </footer>
+
+      <script src="script.js"></script>
+      <script src="productos.js"></script>
+      <script src="entidades.js"></script>
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
    </body>
 </html>
