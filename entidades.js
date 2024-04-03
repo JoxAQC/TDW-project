@@ -1,49 +1,100 @@
-// Obtener el contenedor de productos
-const containElement = document.querySelector('#contenedorEntidad');
+function crearNuevoElemento(nombre, fechaNacimiento, utilidad, imagen, wiki) {
+  // Crear el objeto del nuevo elemento
+  const nuevoElemento = {
+    "nombre": nombre,
+    "fecha_nacimiento": fechaNacimiento,
+    "utilidad": utilidad,
+    "imagen": imagen,
+    "wiki": wiki
+    // Otros datos...
+  };
 
-// Hacer una solicitud para cargar el archivo JSON
-fetch('json/entidades.json')
-  .then(response => {
-    // Verificar si la respuesta fue exitosa
-    if (!response.ok) {
-      throw new Error('No se pudo cargar el archivo JSON');
-    }
-    // Convertir la respuesta a JSON
-    return response.json();
-  })
-  .then(jsonData => {
-    // Iterar sobre los productos y crear elementos HTML para cada uno
-    jsonData.entidades.forEach(entidad => {
-      // Crear el elemento div con la clase "producto"
-      const entidadDiv = document.createElement('div');
-      entidadDiv.classList.add('entidad');
+  // Obtener los datos actuales del almacenamiento local
+  let storedData = localStorage.getItem('entidadesData');
+  let data = storedData ? JSON.parse(storedData) : { entidades: [] };
 
-      // Crear el enlace
-      const linkEntidad = document.createElement('a');
-      linkEntidad.href = entidad.wiki; // Cambiar "producto.enlace" por la propiedad correcta en tu JSON que contiene el enlace
-      entidadDiv.appendChild(linkEntidad);
+  // Agregar el nuevo elemento
+  data.entidades.push(nuevoElemento);
 
-      // Crear la imagen
-      const img = document.createElement('img');
-      img.src = entidad.imagen;
-      img.alt = entidad.nombre;
-      linkEntidad.appendChild(img);
+  // Guardar los datos actualizados en el almacenamiento local
+  localStorage.setItem('entidadesData', JSON.stringify(data));
 
-      //Crear el resumen
-      const resumen = document.createElement('p');
-      resumen.textContent = `${entidad.nombre} es una ${entidad.utilidad} creada en ${entidad.fecha_nacimiento}.`;
-      entidadDiv.appendChild(resumen);
+  // Mostrar los datos actualizados en el HTML
+  mostrarDatos();
+}
 
+// Función para mostrar los datos en el HTML
+function mostrarDatos() {
+  // Obtener el contenedor de entidades
+  const containElement = document.querySelector('#contenedorEntidad');
 
-      // Crear el botón "Editar"
-      const button = document.createElement('button');
-      button.textContent = 'Editar';
-      entidadDiv.appendChild(button);
+  // Limpiar el contenedor antes de agregar los nuevos elementos
+  containElement.innerHTML = '';
 
-      // Agregar el div "product" al contenedor principal de productos
-      containElement.appendChild(entidadDiv);
+  // Obtener el JSON existente
+  fetch('json/entidades.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('No se pudo cargar el archivo JSON');
+      }
+      return response.json();
+    })
+    .then(jsonData => {
+      // Iterar sobre las entidades y crear elementos HTML para cada una
+      jsonData.entidades.forEach(entidad => {
+        // Crear el elemento div con la clase "entidad"
+        const entidadDiv = document.createElement('div');
+        entidadDiv.classList.add('entidad');
+
+        // Crear el enlace
+        const linkEntidad = document.createElement('a');
+        linkEntidad.href = entidad.wiki;
+        entidadDiv.appendChild(linkEntidad);
+
+        // Crear la imagen
+        const img = document.createElement('img');
+        img.src = entidad.imagen;
+        img.alt = entidad.nombre;
+        linkEntidad.appendChild(img);
+
+        //Crear el resumen
+        const resumen = document.createElement('p');
+        resumen.textContent = `${entidad.nombre} es una ${entidad.utilidad} creada en ${entidad.fecha_nacimiento}.`;
+        entidadDiv.appendChild(resumen);
+
+        // Crear el botón "Editar"
+        const button = document.createElement('button');
+        button.textContent = 'Editar';
+        button.classList.add('btn1');
+        entidadDiv.appendChild(button);
+
+        // Agregar el div "entidad" al contenedor principal
+        containElement.appendChild(entidadDiv);
+      });
+    })
+    .catch(error => {
+      console.error('Error al mostrar los datos:', error);
     });
-  })
-  .catch(error => {
-    console.error('Error al cargar el archivo JSON:', error);
-  });
+}
+
+   // Cargar los datos iniciales al iniciar la aplicación
+   mostrarDatos();
+
+   // Manejar el evento submit del formulario
+   const formulario = document.getElementById('formulario');
+   formulario.addEventListener('submit', function(event) {
+     event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
+
+     // Obtener los valores del formulario
+     const nombre = document.getElementById('nombre').value;
+     const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+     const utilidad = document.getElementById('utilidad').value;
+     const imagen = document.getElementById('imagen').value;
+     const wiki = document.getElementById('wiki').value;
+
+     // Agregar la nueva entidad
+     crearNuevoElemento(nombre, fechaNacimiento, utilidad, imagen, wiki);
+
+     // Limpiar los campos del formulario después de crear la entidad
+     formulario.reset();
+});

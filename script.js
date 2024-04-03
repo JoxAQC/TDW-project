@@ -47,6 +47,7 @@ fetch('json/personas.json')
       // Crear el botón "Editar"
       const button = document.createElement('button');
       button.textContent = 'Editar';
+      button.classList.add('btn1');
       personDiv.appendChild(button);
 
       // Agregar el div "person" al contenedor principal

@@ -32,6 +32,7 @@ fetch('json/productos.json')
       // Crear el botón "Editar"
       const button = document.createElement('button');
       button.textContent = 'Editar';
+      button.classList.add('btn1');
       productoDiv.appendChild(button);
 
       // Agregar el div "product" al contenedor principal de productos
