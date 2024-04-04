@@ -1,7 +1,16 @@
-{"usuarios": [
-  {
-    "usuario": "Juanperez",
-    "contrasenia": "1234"
-  }
-]
+{
+  "usuarios": [
+    {
+      "usuario": "Juanperez@gmail.com",
+      "contraseña": "1234"
+    },
+    {
+      "usuario": "mariagonzalez@gmail.com",
+      "contraseña": "5678"
+    },
+    {
+      "usuario": "pedrolopez@gmail.com",
+      "contraseña": "abcd"
+    }
+  ]
 }

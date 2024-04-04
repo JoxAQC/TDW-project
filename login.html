@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inicio de sesión</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <div class="login form">
+          <header>Iniciar sesión</header>
+          <form id="loginForm" action="/login" method="POST">
+            <input type="email" placeholder="Ingresa tu usuario" id="usuario" name="usuario" required>
+            <input type="password" placeholder="Ingresa tu contraseña" id="contraseña" name="contraseña" required>
+            <center><input class="file_submit" type="submit" value="Iniciar Sesión"></center>
+          </form>
+          <div id="mensaje"></div>
+        </div>
+      </div>
+  <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar el envío del formulario por defecto
+      
+      // Obtener los valores de usuario y contraseña del formulario
+      var usuario = document.getElementById("usuario").value;
+      var contraseña = document.getElementById("contraseña").value;
+
+      // Realizar la verificación del usuario con los datos del archivo JSON
+      fetch("json/usuarios.json")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("No se pudo cargar el archivo JSON");
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Verificar si el usuario existe en el archivo JSON
+          var usuarioEncontrado = data.usuarios.find(u => u.usuario === usuario && u.contraseña === contraseña);
+          if (usuarioEncontrado) {
+            // Guardar el usuario en el Local Storage
+            localStorage.setItem('usuario', usuario);
+            // Redirigir a la página de inicio
+            window.location.href = "index.html";
+          } else {
+            // Mostrar un mensaje de error si el usuario no existe
+            document.getElementById("mensaje").textContent = "El usuario o la contraseña son incorrectos.";
+          }
+        })
+        .catch(error => {
+          console.error("Error al cargar el archivo JSON:", error);
+        });
+    });
+  </script>
+</body>
+</html>

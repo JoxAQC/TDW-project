@@ -112,12 +112,61 @@ nav ul li a:hover {
 	padding: 40px;
 }
 
+#temp{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+#temp h3 {
+	margin: 0;
+	padding: 30px;
+	width: 100%;
+	color: var(--white);
+	background-color: var(--darkblue);
+}
+
+#temp img {
+	border: 10px solid var(--lightblue);
+	border-radius: 20px;
+}
+
+.container a:hover {
+	color: var(--darkblue);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tempBtn{
+	background-color: var(--blue);
+	color: var(--white);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.tempBtn:hover{
+	background-color: var(--darkblue);
+	font-weight: bold;
+}
+
+#temp form {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	width: 50%;
+}
+
 
 .container {
+	margin: 0;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap; /* Permite que los elementos se autoajusten */
-	gap: 20px;
+	gap: 40px;
 	justify-content: center;
 	padding: 20px;
 }
@@ -190,6 +239,7 @@ h4 {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	display: none;
 }
 
 .btn2{
@@ -201,19 +251,13 @@ h4 {
 	cursor: pointer;
 	display: inline-block;
 	justify-content: center;
-	width: 50%;
+	width: 30%;
+	display: none;
 }
 
 .btn1:hover, .btn2:hover{
 	background-color: var(--darkblue);
 	font-weight: bold;
-}
-
-.btnContainer{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 
@@ -240,6 +284,15 @@ footer ul {
 
 h5 {
 	font-size: 1em;
+}
+
+
+#redes {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
 }
 
 

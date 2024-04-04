@@ -17,8 +17,10 @@
                  <a href="index.html"><img src="images/logo.png" width="200px" alt=""></a>
                  <div class="lateral">
                   <div class="logbutton">
-                     <a target="_blank" href="home.html"><img src="images/BOTON_INICIARSESION.png" width="150px" alt=""></a>
+                     <a href="login.html"><img src="images/BOTON_INICIARSESION.png" width="150px" alt=""></a>
                  </div>
+                     <!-- Botón para cerrar sesión -->
+                  <button id="cerrarSesion" class="btn1" style="display: none;">Cerrar sesión</button>
                   <div class="dropdown">
                      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
                          <img width="30px" src="https://static.vecteezy.com/system/resources/previews/010/280/769/original/drop-down-menu-button-ui-design-for-websites-and-app-in-more-topic-free-vector.jpg" alt="">
@@ -78,9 +80,8 @@
       <div id="contenedorPersonas" class="container">
 
       </div>
-      <div class="btnContainer">
-         <button class="btn2">Create</button>
-      </div>
+      <center><button class="btn2" id="crearPersona">Create</button></center>
+         
       
     </section>
 
@@ -88,23 +89,11 @@
       <h3>Entidades</h3>
       <div id="contenedorEntidad" class="container">
          <div class="entidad">
-            <a href="https://eric.ed.gov/"> <img src="https://www.asociacionapige.com/wp-content/uploads/2023/05/ERIC.jpg" alt=""></a>   
-            <p>Es una base de datos patrocinada por el Instituto de Educación de los Estados Unidos. Proporciona acceso a una amplia gama de literatura educativa, incluyendo investigaciones, informes, libros, revistas y otros recursos relacionados.</p>
-            <button class="btn1">Editar</button>
+
          </div>
          
       </div>
-      <!-- <form id="formulario">
-         <input type="text" id="nombre" placeholder="Nombre">
-         <input type="text" id="fechaNacimiento" placeholder="Fecha de Nacimiento">
-         <input type="text" id="utilidad" placeholder="Utilidad">
-         <input type="text" id="imagen" placeholder="URL de la Imagen">
-         <input type="text" id="wiki" placeholder="URL de la Wiki">
-         <button type="submit">Crear Elemento</button>
-       </form> -->
-       <div class="btnContainer">
-         <button class="btn2" id="botonCreateEntidad">Create</button>
-       </div>
+       <center><button class="btn2" id="botonCreateEntidad">Create</button></center>
       
     </section>
       
@@ -113,9 +102,7 @@
          <div id="contenedorProductos" class="container">
 
          </div>
-         <div class="btnContainer">
-            <button class="btn2">Create</button>
-         </div>
+         <center><button class="btn2">Create</button></center>
      </section>
 
 
@@ -128,28 +115,53 @@
             </div>
 
             <div>
-               <h5>Información de contacto</h5>
+               <h5>Información de Contacto</h5>
                <ul>
-                  <li>Hola</li>
+                  <li>Telf: 123456789</li>
+                  <li>Correo: ejemplo@gamil.com</li>
                </ul>
             </div>
 
 
             <div>
-               <h5>Información adicional</h5>
-               <ul>
-                  <li>Hola</li>
+               <h5>Redes Sociales</h5>
+               <ul id="redes">
+                  <li><a target="_blank" href="https://www.facebook.com/"><img width="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu8BoxTzPYrLkxf0ZialNBPox10Fx4QjmadS571JQxtQ&s" alt=""></a></li>
+                  <li><a target="_blank" href="https://www.instagram.com"><img width="20px" src="https://img.freepik.com/vector-premium/circulo-negro-logo-instagram_197792-7412.jpg" alt=""></a></li>
+                  <li><a target="_blank" href="https://www.linkedin.com"><img width="20px" src="https://static.vecteezy.com/system/resources/previews/019/874/338/non_2x/linkedin-apps-icon-free-png.png" alt=""></a></li>
+
                </ul>
             </div>   
 
 
       </footer>
 
-         <script src="script.js"></script>
+         <script src="persons.js"></script>
          <script src="productos.js"></script>
          <script src="entidades.js"></script>
          <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
          <script>
+            // Verificar si el usuario ha iniciado sesión
+            if (localStorage.getItem('usuario')) {
+                  // Mostrar los botones si el usuario ha iniciado sesión
+                  document.querySelector('.logbutton').style.display = 'none';
+                  document.getElementById('cerrarSesion').style.display = 'block';
+                  // Seleccionar todos los elementos con la clase .btn1 y .btn2
+                  const buttons = document.querySelectorAll('.btn1, .btn2');
+
+                  // Iterar sobre cada botón y aplicar el estilo
+                  buttons.forEach(function(button) {
+                     button.style.display = 'block';
+                  });
+            }
+
+            // Manejar el evento de clic en el botón "Cerrar sesión"
+            document.getElementById('cerrarSesion').addEventListener('click', function() {
+                  // Eliminar el usuario del Local Storage
+                  localStorage.removeItem('usuario');
+                  window.location.href = 'index.html';
+            });
+
             // Obtener el botón de alternar el menú
             const navToggleBtn = document.querySelector('[data-menu-toggle-btn]');
 

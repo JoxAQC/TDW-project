@@ -48,21 +48,5 @@
         }
       ]
     }
-  ],
-  "personas": [
-    {
-      "nombre": "Charles F. Goldfarb",
-      "fecha_nacimiento": "2 de julio de 1947",
-      "fecha_defuncion": null,
-      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Charles_F_Goldfarb_2006.jpg/220px-Charles_F_Goldfarb_2006.jpg",
-      "wiki": "https://en.wikipedia.org/wiki/Charles_F._Goldfarb"
-    },
-    {
-      "nombre": "Tim Berners-Lee",
-      "fecha_nacimiento": "8 de junio de 1955",
-      "fecha_defuncion": null,
-      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Berners-Lee_KN-2008.jpg/220px-Tim_Berners-Lee_KN-2008.jpg",
-      "wiki": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
-    }
   ]
 }
