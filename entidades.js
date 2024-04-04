@@ -146,6 +146,11 @@ crearEntidadBtn.addEventListener('click', () => {
       // Crear una nueva página temporal
       var newWindow = window.open('', '_blank');
 
+      // Obtener todas las entidades
+      var entidades = cargarEntidades();
+      // Obtener el número total de entidades y sumar 1 para obtener el nuevo índice
+      var nuevoIndice = entidades.length + 1;
+
       // Construir el contenido de la página
       var contenido = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Crear Entidad</title><link href="css/theme.css" rel="stylesheet"></head><body id="temp">';
       contenido += '<h3>Crear Entidad</h3>';
@@ -184,6 +189,7 @@ crearEntidadBtn.addEventListener('click', () => {
       contenido += 'personasInvolucradas.push(parseInt(checkbox.value));';
       contenido += '});';
       contenido += 'var entidad = {';
+      contenido += 'id: ' + nuevoIndice + ','; // Asignar el nuevo índice
       contenido += 'nombre: nombre,';
       contenido += 'fecha_creacion: fechaCreacion,';
       contenido += 'utilidad: utilidad,';
@@ -211,6 +217,7 @@ crearEntidadBtn.addEventListener('click', () => {
 
 
 
+
 // Función para mostrar el formulario de edición de una entidad
 function mostrarFormularioEdicionEntidad(entidad) {
   var newWindow = window.open('', '_blank');
@@ -227,6 +234,19 @@ function mostrarFormularioEdicionEntidad(entidad) {
   contenido += '<input type="text" id="imagen" value="' + entidad.imagen + '" required><br>';
   contenido += '<label for="wiki">URL de la página wiki:</label>';
   contenido += '<input type="text" id="wiki" value="' + entidad.wiki + '" required><br>';
+  contenido += '<h4>Personas involucradas:</h4>';
+  contenido += '<div id="listaPersonas">';
+  const personas = cargarPersonas();
+  personas.forEach(persona => {
+      contenido += '<input type="checkbox" id="persona_' + persona.id + '" value="' + persona.id + '"';
+      // Marcar los checkboxes de las personas involucradas
+      if (entidad.personas_participantes.includes(persona.id)) {
+        contenido += ' checked'; // Marcar el checkbox si la persona está involucrada
+      }
+      contenido += '>';
+      contenido += '<label for="persona_' + persona.id + '">' + persona.nombre + '</label><br>';
+  });
+  contenido += '</div>';
   contenido += '<button class="tempBtn" type="submit">Guardar</button>';
   contenido += '</form>';
   contenido += '<script>document.getElementById("formularioEditarEntidad").addEventListener("submit", function(event) { event.preventDefault(); console.log("Formulario de edición enviado"); ';
@@ -235,8 +255,13 @@ function mostrarFormularioEdicionEntidad(entidad) {
   contenido += 'var utilidad = document.getElementById("utilidad").value;';
   contenido += 'var imagen = document.getElementById("imagen").value;';
   contenido += 'var wiki = document.getElementById("wiki").value;';
+  contenido += 'var personasInvolucradas = [];';
+  contenido += 'var checkboxes = document.querySelectorAll(\'#listaPersonas input[type="checkbox"]:checked\');';
+  contenido += 'checkboxes.forEach(checkbox => {';
+  contenido += 'personasInvolucradas.push(parseInt(checkbox.value));';
+  contenido += '});';
   contenido += 'var entidadesJSON = localStorage.getItem("entidades");';
-  contenido += 'var entidades = entidadesJSON ? JSON.parse(entidadesJSON).entidades : [];';
+  contenido += 'var entidades = entidadesJSON ? JSON.parse(entidadesJSON) : [];';
   contenido += 'var index = entidades.findIndex(e => e.nombre === "' + entidad.nombre + '");';
   contenido += 'if (index !== -1) {';
   contenido += 'entidades[index].nombre = nombre;';
@@ -244,15 +269,17 @@ function mostrarFormularioEdicionEntidad(entidad) {
   contenido += 'entidades[index].utilidad = utilidad;';
   contenido += 'entidades[index].imagen = imagen;';
   contenido += 'entidades[index].wiki = wiki;';
-  contenido += 'localStorage.setItem("entidades", JSON.stringify({ entidades }));';
+  contenido += 'entidades[index].personas_participantes = personasInvolucradas;'; // Actualizar las personas involucradas
+  contenido += 'localStorage.setItem("entidades", JSON.stringify(entidades));';
   contenido += 'console.log("Entidad editada:", entidades[index]);';
   contenido += 'window.location.href = "index.html";';
-  contenido += '}';
+  contenido += '}else{console.log("Entidad no encontrada");}';
   contenido += '});</script>';
   contenido += '</body></html>';
 
   newWindow.document.write(contenido);
 }
+
 
 
 

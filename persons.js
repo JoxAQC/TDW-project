@@ -22,7 +22,7 @@ function cargarPersonas() {
               nombre: "Tim Berners-Lee",
               fecha_nacimiento: "1955-06-08",
               fecha_defuncion: null,
-              imagen: "https://i.blogs.es/3ef43a/tim-berners-lee/1366_2000.jpg",
+              imagen: "https://thinkingheads.com/wp-content/uploads/2017/08/tim-berners-lee-conferenciante.jpg",
               wiki: "https://es.wikipedia.org/wiki/Tim_Berners-Lee"
           },
           {
@@ -104,7 +104,7 @@ function mostrarPersonas() {
               if (index !== -1) {
                   personas.splice(index, 1);
                   guardarPersonas(personas);
-                  window.location.href = 'index.html';  
+                  window.location.reload(); // Recargar la página para reflejar los cambios
               }
           }
       });
